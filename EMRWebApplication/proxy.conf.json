@@ -1,0 +1,15 @@
+{
+  "/login": {
+    "target": "http://localhost:8090",
+    "secure": false
+  },
+  "/EMR": {
+    "target": "http://localhost:8090",
+    "secure": false
+  },
+  "/HlEngine": {
+    "target": "http://localhost:8090",
+    "secure": false
+  }
+
+}
