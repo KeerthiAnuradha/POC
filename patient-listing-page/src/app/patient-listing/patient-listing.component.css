@@ -1,0 +1,61 @@
+table {
+    width: 100%;
+    padding: 2%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+ .long-width{
+    padding-right: 10px !important;
+  }
+  
+.over-flow{
+    height: 39px;
+    line-height: 39px ;
+    overflow: hidden ;
+    text-overflow: ellipsis ;
+    display: block;
+    white-space: nowrap;
+    width: 250px;
+}
+
+.tbdata{
+    font-size: 12px;
+    color: #858F9D;
+    font-weight: 400;
+    font-family:  "Myriad Pro", Arial, Helvetica, sans-serif;
+}
+
+.patientname{
+    font-size: 14px;
+    color: #34455C;
+    font-weight: 700;
+    font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+}
+
+th{
+    color: #276092;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: left;
+    font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+}
+
+.hillromid{
+    font-size: 12px;
+    color: #343F4B;
+    font-weight: 600;
+    font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+}
+.filter{
+    height: 30px;
+    color: #34455C;
+    border: 1px solid #c1c1c1;
+    padding-left: 10px;
+    font-weight: normal;
+    border-radius: 0;
+    box-shadow: none;
+}

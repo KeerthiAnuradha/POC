@@ -1,0 +1,72 @@
+<mat-form-field>
+  <input class="filter" matInput (keyup)="applyFilter($event.target.value)" placeholder="Search with Name, Hill-Rom ID or Email">
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- Id Column
+    <ng-container  matColumnDef="hillromId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+        <td mat-cell *matCellDef="let row"> {{row.hillromId}} </td>
+      </ng-container> -->
+
+     <!-- Patient Name Column -->
+     <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Patient Name </th>
+        <td mat-cell *matCellDef="let row" style="width: 18.75%; padding-top: 13px; padding-right: 20px;">
+          <span class="patientname">{{row.lastName}}, {{row.firstName}}</span>
+          <span class = "over-flow tbdata">{{row.email}}</span> 
+        </td>
+      </ng-container>
+
+      <!-- HillromId Column -->
+    <ng-container matColumnDef="hillromId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> HillromId </th>
+        <td mat-cell *matCellDef="let row" class="hillromid" style="width: 12.5%"> {{row.hillromId}} </td>
+      </ng-container>
+  
+
+    <!-- Date of Birth Column -->
+    <ng-container matColumnDef="dob">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Date of Birth </th>
+      <td mat-cell *matCellDef="let row" class = "tbdata" style="width: 12.5%"> {{row.dob}} </td>
+    </ng-container>
+
+    <!-- City/State Column -->
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> City/State </th>
+      <td mat-cell *matCellDef="let row" style="width: 12.5%"> 
+        <span class ="tbdata">{{row.city}} </span> 
+        <span class ="tbdata" *ngIf="row.state && row.city">,</span>
+        <span class ="tbdata"> {{row.state}}</span> 
+      </td>
+    </ng-container>
+
+    <!-- Transmission Column -->
+    <ng-container matColumnDef="lastTransmissionDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Transmission </th>
+        <td mat-cell *matCellDef="let row" class ="tbdata" style="width: 12.5%"> {{row.lastTransmissionDate | date :'MM/dd/yyyy' }} </td>
+      </ng-container>
+
+      <!-- Clinic Name Column -->
+      <ng-container matColumnDef="clinicNamesCSV">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Clinic Name </th>
+          <td mat-cell *matCellDef="let row"> 
+            <span class = "over-flow tbdata">{{row.clinicNamesCSV}}</span> 
+          </td>
+        </ng-container>
+
+        <!-- Adherene Column -->
+        <ng-container matColumnDef="adherence">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 35px; "> Adherence </th>
+            <td mat-cell *matCellDef="let row" class ="tbdata" style="width: 12.5%; text-align: center" > {{row.adherence}} </td>
+          </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+
+  <!-- <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator> -->
+</div>
